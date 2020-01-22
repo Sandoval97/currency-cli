@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {Route,Redirect} from 'react-router-dom'
 import Home from './components/home/';
+import {BrowserRouter as Router} from "react-router-dom";
 import './App.css';
 
 const useStyles = makeStyles(theme => ({
@@ -33,8 +34,10 @@ function App() {
         </AppBar>
       </header>
       <main>
-        <Redirect from='' to='/home' />  
-        <Route path='/home' component={Home}></Route>
+        <Router>
+            <Redirect from='' to='/home' />  
+            <Route path='/home' component={Home}></Route>
+        </Router>
       </main>
     </div>
   );
