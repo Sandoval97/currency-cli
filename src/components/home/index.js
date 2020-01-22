@@ -5,6 +5,7 @@ import settings from "../../settings";
 import {Line} from 'react-chartjs-2'
 import {getInformation} from './format_graphic'
 import Converted from './convert';
+import fetch from 'cross-fetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import './style.css';
 
@@ -20,11 +21,11 @@ class Home extends React.Component {
     constructor(){
         super()
         this.get_information()
-    }
-    state = {
-        eur:[],
-        usd: [],
-        dates: []
+        this.state = {
+            eur:[],
+            usd: [],
+            dates: []
+        }
     }
     get_information = async() =>{
         let dates = []
